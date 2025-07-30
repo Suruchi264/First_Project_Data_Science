@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FWI Prediction</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px;}
+        h1 { font-size: 2em; }
+        form input, form button { display: block; margin: 10px 0; width: 200px;}
+        .result { font-weight: bold; font-size: 1.5em; margin-top: 30px;}
+    </style>
+</head>
+<body>
+    <h1>FWI Prediction</h1>
+    <form method="post" action="/">
+        <input type="text" name="Temperature" placeholder="Temperature" required>
+        <input type="text" name="RH" placeholder="RH" required>
+        <input type="text" name="Ws" placeholder="Ws" required>
+        <input type="text" name="Rain" placeholder="Rain" required>
+        <input type="text" name="FFMC" placeholder="FFMC" required>
+        <input type="text" name="DMC" placeholder="DMC" required>
+        <input type="text" name="ISI" placeholder="ISI" required>
+        <input type="text" name="Classes" placeholder="Classes" required>
+        <input type="text" name="Region" placeholder="Region" required>
+        <button type="submit">Predict</button>
+    </form>
+    {% if result is not none %}
+        <div class="result">THE FWI prediction is {{ result }}</div>
+    {% endif %}
+</body>
+</html>
